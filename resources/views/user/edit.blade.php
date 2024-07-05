@@ -5,7 +5,7 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
-                    Tambah data PIC Ruangan
+                    Edit data PIC Ruangan
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -39,37 +39,9 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <button type="submit" class="btn btn-success">Tambah Data</button>
+                                <button type="submit" class="btn btn-success">Ubah Data</button>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mt-4">
-                <div class="card-header">Data User</div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-strip" id="myTable">
-                            <thead>
-                                <th>Nama</th>
-                                <th>Nama Pengguna</th>
-                                <th>Pilihan</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>test1</td>
-                                    <td>test2</td>
-                                    <td>
-                                        <form>
-                                            <button type="submit" class="btn btn-danger">Hapus</button>
-                                            <a href="/users/edit" class="btn btn-warning">Edit</a>
-                                            <a href="#" class="btn btn-success">Detail</a>
-                                        </form>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>

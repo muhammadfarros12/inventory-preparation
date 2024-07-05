@@ -5,7 +5,7 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
-                    Tambah Data Barang
+                    Edit Data Barang
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -28,6 +28,13 @@
                                     <option value="">A2</option>
                                     <option value="">A3</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating mb-2">
+                                <input type="text" class="form-control" id="floatingInput" name="nomor_barang"
+                                    placeholder="Nomor Barang">
+                                <label for="floatingInput">Nomor Barang</label>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -55,13 +62,6 @@
 
                         <div class="col-md-6">
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Upload</span>
-                                <input type="file" name="gambar" class="form-control" id="inputGroupFile01">
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="input-group mb-3">
                                 <span class="input-group-text">Kondisi</span>
                                 <select class="form-select" name="kondisi">
                                     <option selected>Choose...</option>
@@ -72,7 +72,15 @@
                             </div>
                         </div>
 
-                        <div class="col-md-12 mb-2">
+                        <div class="col-md-6">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Upload</span>
+                                <input type="file" name="gambar" class="form-control" id="inputGroupFile01">
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 mb-2">
                             <div class="input-group">
                                 <textarea class="form-control" name="spec" id="konten"></textarea>
                             </div>
@@ -80,41 +88,9 @@
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <button type="submit" class="btn btn-success">Tambah Data</button>
+                                <button type="submit" class="btn btn-success">Ubah Data</button>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mt-4">
-                <div class="card-header">Data Barang</div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-strip" id="myTable">
-                            <thead>
-                                <th>Gambar</th>
-                                <th>Nomor Gambar</th>
-                                <th>Nama Barang</th>
-                                <th>Tempat</th>
-                                <th>Pilihan</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Gambar</td>
-                                    <td>1234</td>
-                                    <td>kabel</td>
-                                    <td>A5</td>
-                                    <td>
-                                        <form>
-                                            <button type="submit" class="btn btn-danger">Hapus</button>
-                                            <a href="/item/edit" class="btn btn-warning">Edit</a>
-                                            <a href="#" class="btn btn-success">Detail</a>
-                                        </form>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>
