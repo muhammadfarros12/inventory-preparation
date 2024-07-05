@@ -39,10 +39,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-link"><a href="/rooms">Ruangan</a></li>
-                        <li class="nav-link"><a href="/users">User</a></li>
-                        <li class="nav-link"><a href="/category">Kategori</a></li>
-                        <li class="nav-link"><a href="/item">Barang</a></li>
+                        <li class="nav-link"><a style="text-decoration: none" href="/rooms">Ruangan</a></li>
+                        <li class="nav-link"><a style="text-decoration: none" href="/users">User</a></li>
+                        <li class="nav-link"><a style="text-decoration: none" href="/category">Kategori</a></li>
+                        <li class="nav-link"><a style="text-decoration: none" href="/item">Barang</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

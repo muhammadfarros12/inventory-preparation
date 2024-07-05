@@ -43,7 +43,6 @@
                                         <form>
                                             <button type="submit" class="btn btn-danger">Hapus</button>
                                             <a href="/category/edit" class="btn btn-warning">Edit</a>
-                                            <a href="#" class="btn btn-success">Detail</a>
                                         </form>
                                     </td>
                                 </tr>

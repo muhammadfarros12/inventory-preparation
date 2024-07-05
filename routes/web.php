@@ -27,11 +27,17 @@ Route::get('/users', function(){
 Route::get('/users/edit', function(){
     return view('user.edit');
 });
+Route::get('/user/detail', function(){
+    return view('user.detail');
+});
 Route::get('/rooms', function(){
     return view('room.index');
 });
 Route::get('/rooms/edit', function(){
     return view('room.edit');
+});
+Route::get('/room/detail', function(){
+    return view('room.detail');
 });
 Route::get('/category', function(){
     return view('category.index');
@@ -44,4 +50,7 @@ Route::get('/item', function(){
 });
 Route::get('/item/edit', function(){
     return view('item.edit');
+});
+Route::get('/item/detail', function(){
+    return view('item.detail');
 });

@@ -5,7 +5,7 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
-                    Tambah data PIC Ruangan
+                    Tambah Data PIC Ruangan
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -64,7 +64,7 @@
                                         <form>
                                             <button type="submit" class="btn btn-danger">Hapus</button>
                                             <a href="/users/edit" class="btn btn-warning">Edit</a>
-                                            <a href="#" class="btn btn-success">Detail</a>
+                                            <a href="/user/detail" class="btn btn-success">Detail</a>
                                         </form>
                                     </td>
                                 </tr>
