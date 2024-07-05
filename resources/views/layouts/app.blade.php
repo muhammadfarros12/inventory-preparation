@@ -15,6 +15,15 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+
+    {{-- style --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
+  
 </head>
 <body>
     <div id="app">
@@ -29,8 +38,11 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-link"><a href="/rooms">Ruangan</a></li>
+                        <li class="nav-link"><a href="/users">User</a></li>
+                        <li class="nav-link"><a href="/category">Kategori</a></li>
+                        <li class="nav-link"><a href="/item">Barang</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -76,5 +88,14 @@
             @yield('content')
         </main>
     </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+
+    </script>
+
+    
 </body>
 </html>
