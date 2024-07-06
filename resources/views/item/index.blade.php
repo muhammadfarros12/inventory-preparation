@@ -72,9 +72,9 @@
                             </div>
                         </div>
 
-                        <div class="col-md-12 mb-2">
-                            <div class="input-group">
-                                <textarea class="form-control" name="spec" id="konten"></textarea>
+                        <div class="mb-2">
+                            <div class="form-group">
+                                <textarea class="form-control ckeditor" name="spec" id="ckeditor"></textarea>
                             </div>
                         </div>
 

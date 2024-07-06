@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('user', UserController::class);
+Route::resource('category', CategoryController::class);
 
 // Route::get('/users', function(){
 //     return view('user.index');
@@ -43,12 +45,12 @@ Route::get('/rooms/edit', function(){
 Route::get('/room/detail', function(){
     return view('room.detail');
 });
-Route::get('/category', function(){
-    return view('category.index');
-});
-Route::get('/category/edit', function(){
-    return view('category.edit');
-});
+// Route::get('/category', function(){
+//     return view('category.index');
+// });
+// Route::get('/category/edit', function(){
+//     return view('category.edit');
+// });
 Route::get('/item', function(){
     return view('item.index');
 });

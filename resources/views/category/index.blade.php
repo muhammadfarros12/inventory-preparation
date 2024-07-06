@@ -7,11 +7,13 @@
                 <div class="card-header">
                     Tambah Data Categori
                 </div>
+                <form action="{{ route('category.store') }}" method="post">
+                @csrf
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-floating mb-3">
-                                <input required type="text" class="form-control" id="floatingInput" name="nama_kategori"
+                                <input required type="text" class="form-control" id="floatingInput" name="category_name"
                                     placeholder="Nama Categori">
                                 <label for="floatingInput">Nama Kategori</label>
                             </div>
@@ -25,6 +27,7 @@
                         </div>
                     </div>
                 </div>
+                </form>
             </div>
 
             <div class="card mt-4">
@@ -37,15 +40,19 @@
                                 <th>Pilihan</th>
                             </thead>
                             <tbody>
+                                @foreach($categories as $category)
                                 <tr>
-                                    <td>elektronik</td>
+                                    <td>{{ $category->category_name }}</td>
                                     <td>
-                                        <form>
-                                            <button type="submit" class="btn btn-danger">Hapus</button>
-                                            <a href="/category/edit" class="btn btn-warning">Edit</a>
+                                        <form action="{{ route('category.destroy', $category->id) }}" method="POST">
+                                            @csrf
+                                            {{method_field('DELETE')}}
+                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda akan menghapus {{$category->category_name}} ?');">Hapus</button>
+                                            <a href="{{ route('category.edit', $category) }}" class="btn btn-warning">Edit</a>
                                         </form>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
