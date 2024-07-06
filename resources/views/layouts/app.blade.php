@@ -40,7 +40,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-link"><a style="text-decoration: none" href="/rooms">Ruangan</a></li>
-                        <li class="nav-link"><a style="text-decoration: none" href="/users">User</a></li>
+                        <li class="nav-link"><a style="text-decoration: none" href="/user">User</a></li>
                         <li class="nav-link"><a style="text-decoration: none" href="/category">Kategori</a></li>
                         <li class="nav-link"><a style="text-decoration: none" href="/item">Barang</a></li>
                     </ul>

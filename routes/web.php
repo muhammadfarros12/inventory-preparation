@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -21,15 +22,18 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/users', function(){
-    return view('user.index');
-});
-Route::get('/users/edit', function(){
-    return view('user.edit');
-});
-Route::get('/user/detail', function(){
-    return view('user.detail');
-});
+
+Route::resource('user', UserController::class);
+
+// Route::get('/users', function(){
+//     return view('user.index');
+// });
+// Route::get('/users/edit', function(){
+//     return view('user.edit');
+// });
+// Route::get('/user/detail', function(){
+//     return view('user.detail');
+// });
 Route::get('/rooms', function(){
     return view('room.index');
 });

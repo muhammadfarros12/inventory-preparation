@@ -11,18 +11,18 @@
                     <table class="table table-borderless">
                         <tr>
                             <th>Nama Lengkap</th>
-                            <td>:</td>
-                            <td>pic1</td>
+                            <th>:</th>
+                            <th>{{ $user->name }}</th>
                         </tr>
                         <tr>
                             <th>Username</th>
-                            <td>:</td>
-                            <td>pic1</td>
+                            <th>:</th>
+                            <th>{{ $user->username }}</th>
                         </tr>
                         <tr>
                             <th>Email</th>
-                            <td>:</td>
-                            <td>pic1@mail.com</td>
+                            <th>:</th>
+                            <th>{{ $user->email }}</th>
                         </tr>
                     </table>
                 </div>
