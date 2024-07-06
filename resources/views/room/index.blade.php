@@ -8,10 +8,12 @@
                     Tambah Data Ruangan
                 </div>
                 <div class="card-body">
+                    <form action="{{ route('room.store') }}" method="post">
+                    @csrf
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-floating mb-2">
-                                <input type="text" class="form-control" id="floatingInput" name="nama_ruangan"
+                                <input required type="text" class="form-control" id="floatingInput" name="room_name"
                                     placeholder="Nama Ruangan">
                                 <label for="floatingInput">Nama Ruangan</label>
                             </div>
@@ -19,23 +21,31 @@
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Ukuran Ruangan</span>
-                                <select class="form-select" name="ukuran">
+                                <select required class="form-select @error('size') is-invalid @enderror" name="size">
                                     <option selected>Choose...</option>
                                     <option value="small">Small</option>
                                     <option value="medium">Medium</option>
                                     <option value="large">Large</option>
                                 </select>
+                                @error('size')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
-                                <span class="input-group-text">Penanggung Jawab</span>
-                                <select class="form-select" name="ukuran">
+                                <span  class="input-group-text">Penanggung Jawab</span>
+                                <select  required class="form-select @error('user_id') is-invalid @enderror" name="user_id">
                                     <option selected>Choose...</option>
-                                    <option value="">pic1</option>
-                                    <option value="">pic1</option>
-                                    <option value="">pic1</option>
+                                    @foreach($users as $user)
+                                    @if($user->level == 'pic')
+                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                    @endif
+                                    @endforeach
                                 </select>
+                                @error('user_id')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                         
@@ -45,6 +55,7 @@
                             </div>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
 
@@ -61,19 +72,31 @@
                                 <th>Pilihan</th>
                             </thead>
                             <tbody>
+                                @foreach($rooms as $room)
                                 <tr>
-                                    <td>10000</td>
-                                    <td>A1</td>
-                                    <td>large</td>
-                                    <td>pic1</td>
+                                    <td>{{ $room->room_number }}</td>
+                                    <td>{{ $room->room_name }}</td>
                                     <td>
-                                        <form>
-                                            <button type="submit" class="btn btn-danger">Hapus</button>
-                                            <a href="/rooms/edit" class="btn btn-warning">Edit</a>
-                                            <a href="/room/detail" class="btn btn-success">Detail</a>
+                                        @if($room->size == 'small')
+                                            <span class="badge text-bg-primary">Small</span>
+                                        @elseif($room->size == 'medium')
+                                            <span class="badge text-bg-secondary">Medium</span>
+                                        @elseif($room->size == 'large')
+                                            <span class="badge text-bg-warning">Large</span>
+                                        @endif
+                                    </td>
+                                    <td>{{ $room->user->name }}</td>
+                                    <td>
+                                        <form action="{{ route('room.destroy', $room->id) }}" method="POST">
+                                            @csrf
+                                            {{ method_field('DELETE') }}
+                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda akan menghapus salah satu list ruangan dengan username {{ $room->user->username }}?');">Hapus</button>
+                                            <a href="{{ route('room.edit', $room->id, $room->user->id) }}" class="btn btn-warning">Edit</a>
+                                            <a href="{{ route('room.show', $room->id) }}" class="btn btn-success">Detail</a>
                                         </form>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

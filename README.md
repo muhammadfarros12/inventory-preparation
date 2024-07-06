@@ -5,5 +5,7 @@ https://laravel.com/docs/11.x/seeding
 https://whimsical.com/struktur-database-V7X81vq37TJR5Tn7QLQU8P  
 
 https://cdn.datatables.net/  
-ck editor still problem
+ck editor still problem  
 
+solved  
+ npm install @ckeditor/ckeditor5-build-classic --save  

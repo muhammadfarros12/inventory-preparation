@@ -12,17 +12,17 @@
                         <tr>
                             <th>Nomor Ruangan</th>
                             <td>:</td>
-                            <td>1000</td>
+                            <td>{{ $room->room_number }}</td>
                         </tr>
                         <tr>
                             <th>Nama Ruangan</th>
                             <td>:</td>
-                            <td>A1</td>
+                            <td>{{ $room->room_name }}</td>
                         </tr>
                         <tr>
                             <th>Penanggung Jawab</th>
                             <td>:</td>
-                            <td>PIC1</td>
+                            <td>{{ $room->user->name }}</td>
                         </tr>
                     </table>
                 </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Room;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -41,7 +42,8 @@ class UserController extends Controller
 
     function show($id) {
         $user = User::findOrFail($id);
-        return view('user.detail', compact('user'));
+        $room = Room::where('user_id', $id)->get()->all();
+        return view('user.detail', compact('user','room'));
     }
 
     function destroy($id) {
