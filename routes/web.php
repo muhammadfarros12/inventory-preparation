@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -28,6 +29,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('user', UserController::class);
 Route::resource('category', CategoryController::class);
 Route::resource('room', RoomController::class);
+Route::resource('item', ItemController::class);
 
 // Route::get('/users', function(){
 //     return view('user.index');
@@ -38,27 +40,27 @@ Route::resource('room', RoomController::class);
 // Route::get('/user/detail', function(){
 //     return view('user.detail');
 // });
-Route::get('/rooms', function(){
-    return view('room.index');
-});
-Route::get('/rooms/edit', function(){
-    return view('room.edit');
-});
-Route::get('/room/detail', function(){
-    return view('room.detail');
-});
+// Route::get('/rooms', function(){
+//     return view('room.index');
+// });
+// Route::get('/rooms/edit', function(){
+//     return view('room.edit');
+// });
+// Route::get('/room/detail', function(){
+//     return view('room.detail');
+// });
 // Route::get('/category', function(){
 //     return view('category.index');
 // });
 // Route::get('/category/edit', function(){
 //     return view('category.edit');
 // });
-Route::get('/item', function(){
-    return view('item.index');
-});
-Route::get('/item/edit', function(){
-    return view('item.edit');
-});
-Route::get('/item/detail', function(){
-    return view('item.detail');
-});
+// Route::get('/item', function(){
+//     return view('item.index');
+// });
+// Route::get('/item/edit', function(){
+//     return view('item.edit');
+// });
+// Route::get('/item/detail', function(){
+//     return view('item.detail');
+// });
